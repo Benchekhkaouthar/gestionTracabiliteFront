@@ -5,13 +5,15 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { DossierListDataSource, DossierListItem } from './dossier-list-datasource';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-dossier-list',
   templateUrl: './dossier-list.component.html',
   styleUrl: './dossier-list.component.scss',
   standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule, MatButtonModule, RouterModule]
+  imports: [MatTableModule, MatPaginatorModule, MatSortModule, MatButtonModule, RouterModule, MatIconModule, MatProgressBarModule]
 })
 export class DossierListComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -20,7 +22,7 @@ export class DossierListComponent implements AfterViewInit {
   dataSource = new DossierListDataSource();
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'intitule', 'etatDossier'];
+  displayedColumns = ['id', 'intitule', 'etatDossier', 'action'];
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;

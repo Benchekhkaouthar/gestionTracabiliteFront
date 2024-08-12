@@ -13,12 +13,12 @@ export interface DossierListItem {
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: DossierListItem[] = [
-  {id: 1, intitule: 'SMA/01/24-1', etatDossier: ''},
-  {id: 2, intitule: 'SMA/01/24-2', etatDossier: ''},
-  {id: 3, intitule: 'SMA/01/24-3', etatDossier: ''},
-  {id: 4, intitule: 'SMA/01/24-4', etatDossier: ''},
-  {id: 5, intitule: 'SMA/01/24-5', etatDossier: ''},
-  {id: 6, intitule: 'SMA/01/24-6', etatDossier: ''}
+  {id: 1, intitule: 'SMA/01/24-1', etatDossier: 'Validé '},
+  {id: 2, intitule: 'SMA/01/24-2', etatDossier: 'En attente'},
+  {id: 3, intitule: 'SMA/01/24-3', etatDossier: 'En cours'},
+  {id: 4, intitule: 'SMA/01/24-4', etatDossier: 'Complet '},
+  {id: 5, intitule: 'SMA/01/24-5', etatDossier: 'Rejeté '},
+  {id: 6, intitule: 'SMA/01/24-6', etatDossier: 'En attente de paiement '}
 ];
 
 /**
