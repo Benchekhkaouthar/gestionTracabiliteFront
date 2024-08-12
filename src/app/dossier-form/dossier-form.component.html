@@ -1,1 +1,46 @@
-<p>dossier-form works!</p>
+<section> 
+    <div class="example-button-row">
+      <h4>AJOUTER UN NOUVEAU DOSSIER</h4>
+    </div>
+  </section>
+
+  @if (form) {
+    <form [formGroup]="form" novalidate (ngSubmit)="saveDossier()">
+      <mat-card class="add-user">
+        
+        <mat-card-content> 
+            <div class="row">
+                <div class="col">
+                  <mat-form-field class="full-width">
+                    <mat-label>Cadre d'achat</mat-label>
+                    <mat-select  formControlName="cadreAchat">
+                      @for (cadreAchat of cadreAchats; track cadreAchat) {
+                        <mat-option [value]="cadreAchat.value">{{ cadreAchat.name }}</mat-option>
+                      }
+                    </mat-select>
+                    @if (form.controls['cadreAchat'].hasError('required')) {
+                      <mat-error>Cadre achat is <strong>required</strong></mat-error>
+                    }
+                  </mat-form-field>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="col">  
+                <mat-form-field class="full-width">
+                    <mat-label>Intitulé</mat-label>
+                    <input matInput formControlName="dateFichier"> 
+                    
+                    @if (form.controls['dateFichier'].hasError('required')) {
+                    <mat-error>L'intitulé du dossier is <strong>required</strong></mat-error>
+                    }
+                </mat-form-field> 
+                </div> 
+            </div>
+          
+        </mat-card-content>
+        <mat-card-actions >
+          <button mat-flat-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+    }
