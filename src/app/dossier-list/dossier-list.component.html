@@ -1,0 +1,39 @@
+<section style="display: flex; align-items: center; justify-content: space-between;">
+  <h4>LISTES DES DOSSIER DE REGLEMENT</h4>
+  <div class="example-button-row">
+    <button mat-raised-button routerLink="/dossier-form">Ajouter un DOSSIER</button> 
+  </div>
+</section>
+
+<div class="mat-elevation-z2">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- intitule Column -->
+    <ng-container matColumnDef="intitule">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Intitulé</th>
+      <td mat-cell *matCellDef="let row">{{row.intitule}}</td>
+    </ng-container>
+
+     <!-- etatDossier Column -->
+     <ng-container matColumnDef="etatDossier">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Etat</th>
+      <td mat-cell *matCellDef="let row">{{row.etatDossier}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>

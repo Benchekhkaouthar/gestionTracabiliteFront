@@ -1,0 +1,63 @@
+
+.full-width {
+width: 100%;
+}
+
+.add-user {
+min-width: 120px;
+margin: 20px auto;
+}
+
+h4 {
+margin: 0;
+font-weight: 400;
+font-size: 25px;
+color: #ba005c;
+}
+
+.file-upload-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px dashed #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .file-dropper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-name {
+    font-weight: bold;
+  }
+  
+  .file-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .file-info {
+    margin: 0;
+    flex-grow: 1; 
+  }
+  
+  .delete-icon {
+    cursor: pointer;
+    margin-left: 10px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+ 
+  
+ 
