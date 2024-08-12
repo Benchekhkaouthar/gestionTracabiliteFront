@@ -39,7 +39,7 @@ export class DossierFormComponent {
 ngOnInit(): void {
   this.form = this.fb.group({
     cadreAchat: ['', [Validators.required]],
-    dateFichier: ['', [Validators.required]], 
+    intitule: ['', [Validators.required]], 
     file: ['', Validators.required]
   });
 }

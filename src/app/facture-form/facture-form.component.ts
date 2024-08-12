@@ -50,15 +50,17 @@ export class FactureFormComponent {
   private snackBar = inject(MatSnackBar)
 
 
- cadreAchats = [
-  {value: 'SMA/01/24',name: 'SMA/01/24'},
-  {value: 'SMA/02/24',name: 'SMA/02/24'}
+ dossiers = [
+  {value: 'SMA/01/24-1',name: 'SMA/01/24-1'},
+  {value: 'SMA/02/24-2',name: 'SMA/02/24-2'}
 ];
 
 ngOnInit(): void {
   this.form = this.fb.group({
-    cadreAchat: ['', [Validators.required]],
+    dossier: ['', [Validators.required]],
     dateFichier: ['', [Validators.required]], 
+    delaiANePasDepasser: ['', [Validators.required]], 
+    type: ['', [Validators.required]], 
     file: ['', Validators.required]
   });
 }

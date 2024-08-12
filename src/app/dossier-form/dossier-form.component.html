@@ -28,9 +28,9 @@
                 <div class="col">  
                 <mat-form-field class="full-width">
                     <mat-label>Intitulé</mat-label>
-                    <input matInput formControlName="dateFichier"> 
+                    <input matInput formControlName="intitule"> 
                     
-                    @if (form.controls['dateFichier'].hasError('required')) {
+                    @if (form.controls['intitule'].hasError('required')) {
                     <mat-error>L'intitulé du dossier is <strong>required</strong></mat-error>
                     }
                 </mat-form-field> 

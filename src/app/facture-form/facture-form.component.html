@@ -12,13 +12,13 @@
             <div class="row">
                 <div class="col">
                   <mat-form-field class="full-width">
-                    <mat-label>Cadre d'achat</mat-label>
-                    <mat-select  formControlName="cadreAchat">
-                      @for (cadreAchat of cadreAchats; track cadreAchat) {
-                        <mat-option [value]="cadreAchat.value">{{ cadreAchat.name }}</mat-option>
+                    <mat-label>Dossier</mat-label>
+                    <mat-select  formControlName="dossier">
+                      @for (dossier of dossiers; track dossier) {
+                        <mat-option [value]="dossier.value">{{ dossier.name }}</mat-option>
                       }
                     </mat-select>
-                    @if (form.controls['cadreAchat'].hasError('required')) {
+                    @if (form.controls['dossier'].hasError('required')) {
                       <mat-error>Cadre achat is <strong>required</strong></mat-error>
                     }
                   </mat-form-field>
@@ -37,7 +37,20 @@
                 </mat-form-field> 
                 </div> 
             </div>
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-label>Délai à ne pas dépasser</mat-label>
+                  <input matInput formControlName="delaiANePasDepasser">  
+                  @if (form.controls['delaiANePasDepasser'].hasError('required')) {
+                    <mat-error>Cadre achat is <strong>required</strong></mat-error>
+                  }
+                </mat-form-field>
+              </div>
+          </div> 
             <!--  -->
+            <div class="row">
+              <div class="col"> 
             <div
             class="file-upload-wrapper"
             (drop)="onFileDrop($event)"
@@ -52,7 +65,7 @@
             />
             <div class="file-dropper" (click)="fileInput.click()">
               <mat-icon>upload</mat-icon>
-              <p>{{ "Facture" }}</p>
+              <p>Facture</p>
               <div *ngIf="imageName()">
                 <div *ngIf="selectedFile" class="file-info-container">
                     <p class="file-info">
@@ -63,7 +76,9 @@
               </div>
             </div>
           </div>
-            <!--  -->
+          </div>
+        </div>  
+          <!--  -->
         </mat-card-content>
         <mat-card-actions >
           <button mat-flat-button color="primary" type="submit">Submit</button>
