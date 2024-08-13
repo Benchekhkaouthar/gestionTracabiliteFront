@@ -40,5 +40,21 @@ export const routes: Routes = [
                 (m) => m.FactureFormComponent
             ),
             title:'Ajouter une facture'
+    },
+    {
+        path: 'types',
+        loadComponent:()=>
+            import('./type-list/type-list.component').then(
+                (m) => m.TypeListComponent
+            ),
+        title:'Type de fichier'
+    }, 
+    {
+        path: 'type-form',
+        loadComponent:()=>
+            import('./type-form/type-form.component').then(
+                (m) => m.TypeFormComponent
+            ),
+            title:'Ajouter un type'
     }
 ];
