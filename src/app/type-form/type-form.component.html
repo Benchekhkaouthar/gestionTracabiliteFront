@@ -1,1 +1,30 @@
-<p>type-form works!</p>
+<section> 
+    <div class="example-button-row">
+      <h4>AJOUTER UN NOUVEAU TYPE</h4>
+    </div>
+  </section>
+
+  @if (form) {
+    <form [formGroup]="form" novalidate (ngSubmit)="saveType()">
+      <mat-card class="add-user">
+        
+        <mat-card-content> 
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="full-width">
+                  <mat-label>Type</mat-label>
+                  <input matInput formControlName="type" >
+                  @if (form.controls['type'].hasError('required')) {
+                    <mat-error>Type is <strong>required</strong></mat-error>
+                  }
+                </mat-form-field>
+              </div>
+          </div> 
+           
+        </mat-card-content>
+        <mat-card-actions >
+          <button mat-flat-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+    }

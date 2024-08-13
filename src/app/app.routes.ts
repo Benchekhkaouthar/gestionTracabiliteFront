@@ -56,5 +56,21 @@ export const routes: Routes = [
                 (m) => m.TypeFormComponent
             ),
             title:'Ajouter un type'
+    },
+    {
+        path: 'fichiers',
+        loadComponent:()=>
+            import('./fichier-list/fichier-list.component').then(
+                (m) => m.FichierListComponent
+            ),
+        title:'Fichier'
+    },
+    {
+        path: 'fichier-form',
+        loadComponent:()=>
+            import('./fichier-form/fichier-form.component').then(
+                (m) => m.FichierFormComponent
+            ),
+        title:'Ajouter un fichier'
     }
 ];

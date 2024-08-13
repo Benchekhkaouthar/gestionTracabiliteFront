@@ -1,20 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
-
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatCardModule } from '@angular/material/card';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CommonModule } from '@angular/common';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-facture-form',
+  selector: 'app-fichier-form',
   standalone: true,
   imports: [
     MatInputModule,
@@ -27,12 +25,10 @@ import { provideNativeDateAdapter } from '@angular/material/core';
     MatIconModule,
     CommonModule
   ],
-  providers: [provideNativeDateAdapter()],
-  templateUrl: './facture-form.component.html',
-  styleUrl: './facture-form.component.scss'
+  templateUrl: './fichier-form.component.html',
+  styleUrl: './fichier-form.component.scss'
 })
-export class FactureFormComponent {
-
+export class FichierFormComponent {
   private fb = inject(FormBuilder); 
   private route = inject(Router);
 
@@ -108,6 +104,5 @@ saveFacture(): void {
     }
   }
   
-
 
 }
