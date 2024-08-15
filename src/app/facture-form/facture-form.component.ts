@@ -57,6 +57,7 @@ export class FactureFormComponent {
 
 ngOnInit(): void {
   this.form = this.fb.group({
+    intitule: ['', [Validators.required]],
     dossier: ['', [Validators.required]],
     dateFichier: ['', [Validators.required]], 
     delaiANePasDepasser: ['', [Validators.required]], 

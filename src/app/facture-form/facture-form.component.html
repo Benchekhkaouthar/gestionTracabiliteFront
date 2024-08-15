@@ -9,6 +9,17 @@
       <mat-card class="add-user">
         
         <mat-card-content> 
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <mat-label>Intitulé</mat-label>
+                  <input matInput formControlName="intitule" >
+                  @if (form.controls['intitule'].hasError('required')) {
+                    <mat-error>Intitulé is <strong>required</strong></mat-error>
+                  }
+                </mat-form-field>
+              </div>
+          </div>
             <div class="row">
                 <div class="col">
                   <mat-form-field class="full-width">
