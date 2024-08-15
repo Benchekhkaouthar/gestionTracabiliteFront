@@ -8,17 +8,18 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 export interface FichierListItem {
   fichier: string;
   dossier: string;
+  type: string;
   id: number;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: FichierListItem[] = [
-  {id: 1, fichier: 'BR', dossier:'SMA/01/24-1'},
-  {id: 2, fichier: 'BRI', dossier:'SMA/01/24-1'},
-  {id: 3, fichier: 'BL', dossier:'SMA/01/24-1'},
-  {id: 4, fichier: 'Attachement', dossier:'SMA/01/24-1'},
-  {id: 5, fichier: 'Fiche de pénalité', dossier:'SMA/01/24-1'},
-  {id: 6, fichier: 'Décompte', dossier:'SMA/01/24-1'}
+  {id: 1, fichier: 'BR 01/23', type: 'BR', dossier:'SMA/01/24-1'},
+  {id: 2, fichier: 'BRI 01/24 ', type: 'BRI', dossier:'SMA/01/24-1'},
+  {id: 3, fichier: 'BL 01/24', type: 'BL', dossier:'SMA/01/24-1'},
+  {id: 4, fichier: 'Attachement 01/24', type: 'Attachement', dossier:'SMA/01/24-1'},
+  {id: 5, fichier: 'Fiche de pénalité 01/24', type: 'Fiche de pénalité', dossier:'SMA/01/24-1'},
+  {id: 6, fichier: 'Décompte 01/24', type: 'Décompte', dossier:'SMA/01/24-1'}
 ];
 
 /**
