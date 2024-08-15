@@ -3,6 +3,7 @@ import { Component, ElementRef, inject, signal, ViewChild } from '@angular/core'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -25,6 +26,7 @@ import { Router } from '@angular/router';
     MatIconModule,
     CommonModule
   ],
+  providers: [provideNativeDateAdapter()],
   templateUrl: './fichier-form.component.html',
   styleUrl: './fichier-form.component.scss'
 })
@@ -51,8 +53,15 @@ export class FichierFormComponent {
   {value: 'SMA/02/24-2',name: 'SMA/02/24-2'}
 ];
 
+types = [
+  {value: 'BR',name: 'BR'},
+  {value: 'BL',name: 'BL'},
+  {value: 'Attachement',name: 'Attachement'}
+];
+
 ngOnInit(): void {
   this.form = this.fb.group({
+    intitule: ['', [Validators.required]],
     dossier: ['', [Validators.required]],
     dateFichier: ['', [Validators.required]], 
     delaiANePasDepasser: ['', [Validators.required]], 

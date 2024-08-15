@@ -9,6 +9,17 @@
       <mat-card class="add-user">
         
         <mat-card-content> 
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <mat-label>Intitulé</mat-label>
+                  <input matInput formControlName="intitule" >
+                  @if (form.controls['intitule'].hasError('required')) {
+                    <mat-error>Intitulé is <strong>required</strong></mat-error>
+                  }
+                </mat-form-field>
+              </div>
+          </div>
             <div class="row">
                 <div class="col">
                   <mat-form-field class="full-width">
@@ -27,7 +38,7 @@
             <div class="row">
                 <div class="col">  
                 <mat-form-field class="full-width">
-                    <mat-label>Date de reception</mat-label>
+                    <mat-label>Date</mat-label>
                     <input matInput [matDatepicker]="picker" formControlName="dateFichier"> 
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
@@ -40,9 +51,12 @@
             <div class="row">
               <div class="col">
                 <mat-form-field class="full-width">
-                  <mat-label>Délai à ne pas dépasser</mat-label>
-                  <input matInput formControlName="delaiANePasDepasser" type="number" placeholder="0">
-                  <span matTextSuffix>Jrs</span>  
+                  <mat-label>Type de Fichier</mat-label>
+                  <mat-select  formControlName="dossier">
+                    @for (type of types; track type) {
+                      <mat-option [value]="type.value">{{ type.name }}</mat-option>
+                    }
+                  </mat-select>
                   @if (form.controls['delaiANePasDepasser'].hasError('required')) {
                     <mat-error>Cadre achat is <strong>required</strong></mat-error>
                   }
@@ -66,7 +80,7 @@
             />
             <div class="file-dropper" (click)="fileInput.click()">
               <mat-icon>upload</mat-icon>
-              <p>Facture</p>
+              <p>Fichier</p>
               <div *ngIf="imageName()">
                 <div *ngIf="selectedFile" class="file-info-container">
                     <p class="file-info">
