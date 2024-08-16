@@ -21,7 +21,7 @@ export class FichierListComponent implements AfterViewInit {
   dataSource = new FichierListDataSource();
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'fichier','type', 'dossier'];
+  displayedColumns = ['id', 'fichier','type', 'dossier', 'action'];
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
