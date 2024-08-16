@@ -72,5 +72,13 @@ export const routes: Routes = [
                 (m) => m.FichierFormComponent
             ),
         title:'Ajouter un fichier'
+    },
+    {
+        path: 'fichier-view',
+        loadComponent:()=>
+            import('./fichier-view/fichier-view.component').then(
+                (m) => m.FichierViewComponent
+            ),
+        title:'Fichier Viewer'
     }
 ];
