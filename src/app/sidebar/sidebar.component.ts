@@ -30,7 +30,8 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 export class SidebarComponent {
 
-  rootRoutes = routes.filter(r=>r.path);
+  //rootRoutes = routes.filter(r=>r.path);
+  rootRoutes = routes.filter(r => r.loadComponent && r.loadComponent.toString().includes('List'));
 
   
   private breakpointObserver = inject(BreakpointObserver);
