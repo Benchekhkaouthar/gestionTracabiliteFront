@@ -74,11 +74,11 @@ export const routes: Routes = [
         title:'Ajouter un fichier'
     },
     {
-        path: 'fichier-view',
+        path: 'view-dossier',
         loadComponent:()=>
-            import('./fichier-view/fichier-view.component').then(
-                (m) => m.FichierViewComponent
+            import('./view-dossier/view-dossier.component').then(
+                (m) => m.ViewDossierComponent
             ),
-        title:'Fichier Viewer'
+        title:'Dossier'
     }
 ];

@@ -30,7 +30,7 @@
     <!-- action Column -->
      <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
-      <td mat-cell *matCellDef="let row"><mat-icon aria-hidden="false" title="Consulter le dossier" aria-label="view icon" fontIcon="folder_open "></mat-icon> </td>
+      <td mat-cell *matCellDef="let row"><mat-icon routerLink="/view-dossier" aria-hidden="false" title="Consulter le dossier" aria-label="view icon" fontIcon="folder_open "></mat-icon> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
